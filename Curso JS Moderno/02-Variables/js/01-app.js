@@ -24,13 +24,13 @@ var categoria = "computadora",
   calificacion = 5;
 
 
-  //Las variables no pueden iniciar con numeros
-  var 99Dias;
-  var Dias99;
+//   //Las variables no pueden iniciar con numeros
+//   var 99Dias;
+//   var Dias99;
 
-  var 01;
-  var_01;
+//   var 01;
+//   var_01;
 
-  var nombreProductoCategoriaPrecio;
-  var nombre_producto_categoria_precio;
-  var Producto;
+//   var nombreProductoCategoriaPrecio;
+//   var nombre_producto_categoria_precio;
+//   var Producto;
