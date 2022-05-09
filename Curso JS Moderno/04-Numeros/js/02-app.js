@@ -4,21 +4,21 @@ const numero2 = 20;
 let resultado;
 
 //suma
+
 resultado = numero1 + numero2;
 
-// Resta
+//resta
 
 resultado = numero1 - numero2;
 
-//Multiplicacion
+//multiplicacion
 
 resultado = numero1 * numero2;
 
-//Divicion
-
+//division
 resultado = numero1 / numero2;
 
-///Modulo
+//modulo
 
 resultado = numero1 % numero2;
 

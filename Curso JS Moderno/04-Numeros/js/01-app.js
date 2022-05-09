@@ -2,7 +2,7 @@
 
 const numero1 = 30;
 const numero2 = 20;
-const nuemro3 = 20.2;
+const numero3 = 20.2;
 const numero4 = 0.10203;
 const numero5 = -20;
 
