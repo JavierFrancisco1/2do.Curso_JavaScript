@@ -4,44 +4,43 @@ resultado = Math.PI;
 
 //Redondear
 
-resultado = Math.round(2.2);
-resultado = Math.round(2.5);
 resultado = Math.round(2.8);
-resultado = Math.round(2.3);
+resultado = Math.round(2.2);
+resultado = Math.round(2.6);
+resultado = Math.round(2.5);
+resultado = Math.round(2.4);
 
-//redondear hacia arriba.
+// Redondear hacia arriba
 
 resultado = Math.ceil(2.1);
 
-// Redondea hacia abajo
+//Redondear hacia abajo o numero absoluto
 
+resultado = Math.floor(2.7);
 resultado = Math.floor(2.9);
 
-//Raiz cuadrada
+//Raíz Cuadrada
 
 resultado = Math.sqrt(144);
 
-// absoluto
-
+// Absoluto
 resultado = Math.abs(-500);
 
-//Potencia
+// potencia
+resultado = Math.pow(8, 3);
 
-resultado = Math.pow(2, 4);
+//mínimo
+resultado = Math.min(3, 5);
 
-//minimo
+// Máximo
 
-resultado = Math.min(3, 5, 1, 12, -3);
-
-//maximo
-
-resultado = Math.max(3, 5, 1, 12, -3);
+resultado = Math.max(10, 15);
 
 //aleatorio
-
 // resultado = Math.random() * 20;
 
-// Aleatorio dentro de un rango...
+//Aleatorio dentro de un rango.....
+
 resultado = Math.floor(Math.random() * 30);
 
 console.log(resultado);
