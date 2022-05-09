@@ -3,11 +3,12 @@ const producto = "Monitor de 20 pulgadas";
 console.log(producto.toUpperCase());
 console.log(producto.toLowerCase());
 
-const email = "correo@correo.com";
-const email2 = "Juan@correo.com.mx";
+const email = 'CORREO@CORREO.COM';
+const emial2 = 'juan@correo.com'
 
-console.log(email.toUpperCase());
-console.log(email2.toLowerCase());
+
+console.log(email.toLowerCase());
 
 const precio = 300;
+console.log(precio);
 console.log(precio.toString());
