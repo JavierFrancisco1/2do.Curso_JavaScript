@@ -1,8 +1,4 @@
-console.log("Hola");
-console.log("mundo");
-
-function hola() {
-  console.log("ok");
-  console.log("Hola");
-  console.log("mundo");
-}
+const nombre = prompt("¿cual es tu nombre?");
+document.querySelector(
+  ".contenido"
+).innerHTML = `${nombre} esta aprendiendo javaScript moderno`;
