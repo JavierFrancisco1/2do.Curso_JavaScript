@@ -1,11 +1,8 @@
 const producto = "Tablet";
 
-//No se pueden reasignar
+// No se pueden reasignar
 // producto = "Monitor";
+//console.log(producto);
 
-console.log(producto);
-
-
-const precio;
-precio = 20;
+const precio = 20;
 console.log(precio);
