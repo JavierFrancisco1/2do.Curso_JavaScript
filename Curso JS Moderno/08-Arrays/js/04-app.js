@@ -1,6 +1,6 @@
-const meses = ['enero','febrero','marzo','abil','mayo','junio','julio'];
+const meses = ["enero", "febrero", "marzo", "abil", "mayo", "junio", "julio"];
 
-meses[0] = 'nuevo mes';
-meses[10] = 'ultimo mes';
+meses[0] = "nuevo mes";
+meses.push("Ultimo mes");
 
 console.table(meses);
