@@ -3,30 +3,22 @@ const carrito = [];
 // Definir un producto
 
 const producto = {
-    nombre: 'Monitor 32 pulgadas',
-    precio: 400
-}
+  nombre: "Monitor de 24 pulgadas",
+  precio: 400,
+};
 
 const producto2 = {
-    nombre: 'celular',
-    precio : 800
-}
-
+  nombre: "celular",
+  precio: 800,
+};
 
 const producto3 = {
-    nombre : 'teclado',
-    precio: 50
-}
+  nombre: "Teclado",
+  precio: 50,
+};
 
-let resultado;
-
-resultado = [...carrito,producto];
-
+let resultado = [...carrito,producto];
 resultado = [...resultado,producto2]
-resultado = [producto2,...resultado]
-
-
-
-
+resultado = [producto3,...resultado]
 
 console.table(resultado);
