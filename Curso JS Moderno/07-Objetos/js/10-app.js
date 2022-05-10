@@ -14,8 +14,7 @@ console.log(medidas);
 
 const resultado = Object.assign(producto, medidas);
 
-//Spreade operator o REst Operator
+const resultado2 = { ...producto, ...medidas };
 
-const resultado2 = { ...producto, ...medidas }
 console.log(resultado);
 console.log(resultado2);
