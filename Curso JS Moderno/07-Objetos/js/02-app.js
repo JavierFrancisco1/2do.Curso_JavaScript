@@ -5,7 +5,6 @@ const producto = {
 };
 
 console.log(producto);
-
 console.log(producto.nombre);
 console.log(producto.precio);
 console.log(producto.disponible);
