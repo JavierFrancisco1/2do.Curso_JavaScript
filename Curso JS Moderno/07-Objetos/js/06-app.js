@@ -16,9 +16,9 @@ const producto = {
 const {
   nombre,
   informacion,
+  informacion: { fabricacion },
   informacion: {
-    fabricacion,
-    fabricacion: { pais },
+  fabricacion: { pais },
   },
 } = producto;
 console.log(nombre);

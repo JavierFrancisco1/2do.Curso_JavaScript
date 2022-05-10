@@ -8,13 +8,12 @@ const producto = {
       medida: "1m",
     },
     fabricacion: {
-      pais: "china",
+      pais: "China",
     },
   },
 };
 
 console.log(producto);
-console.log(producto.informacion);
-console.log(producto.informacion.peso);
 
+// console.log(producto.informacion);
 console.log(producto.informacion.fabricacion.pais);
