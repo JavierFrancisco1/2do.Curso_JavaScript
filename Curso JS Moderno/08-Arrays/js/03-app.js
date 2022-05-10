@@ -1,17 +1,14 @@
-const meses = ['enero','febrero','marzo','abil','mayo','junio'];
-
-
+const meses = ["enero", "febrero", "marzo", "abil", "mayo", "junio", "julio"];
 
 console.table(meses);
-console.log(meses[0]);
-console.log(meses[1]);
-console.log(meses[2]);
+console.table(meses[0]);
+console.table(meses[1]);
+console.table(meses[2]);
 
-
-//Cuanto mide el arreglo
+// Cuanto mide el arreglo
 
 console.log(meses.length);
 
-for(let i = 0; i< meses.length; i++){
-    console.log(i + ':' + meses[i]);
+for (let i = 0; i < meses.length; i++) {
+  console.log(meses[i]);
 }
