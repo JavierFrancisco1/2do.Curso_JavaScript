@@ -6,12 +6,12 @@ const producto = {
   disponible: true,
 };
 
-Object.freeze(producto)
+Object.freeze(producto);
 
 // producto.disponible = false;
 // producto.imagen = "imagen.jpg";
+// delete producto.precio;
 
-console.log(producto);
+// console.log(producto);
 
 console.log(Object.isFrozen(producto));
-
