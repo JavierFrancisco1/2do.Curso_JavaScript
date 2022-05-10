@@ -6,17 +6,16 @@ const producto = {
   disponible: true,
 };
 
-// Object constructor
+//Object Constructor
 
-function Producto(nombre,precio){
-    this.nombre = nombre;
-    this.precio = precio;
-    this.disponible = true;
+function Producto(nombre, precio) {
+  this.nombre = nombre;
+  this.precio = precio;
+  this.disponible = true;
 }
 
-const producto2 = new Producto('Monitor de 24 Pulgadas', 500);
+const producto2 = new Producto("monitor de 24 pulgadas", 500);
 console.log(producto2);
 
-const producto3 = new Producto('television',100);
+const producto3 = new Producto("Television", 1000);
 console.log(producto3);
-
