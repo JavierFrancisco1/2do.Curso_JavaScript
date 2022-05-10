@@ -4,11 +4,11 @@ const producto = {
   disponible: true,
 };
 
-//   const nombre = producto.nombre;
-//   console.log(producto.nombre);
+// const nombre = producto.nombre;
 
-//Destructuring
-const { nombre, precio, disponible, } = producto;
-console.log(nombre);
-console.log(precio);
-console.log(disponible);
+// console.log(nombre);
+
+// Destructuring
+const { nombre, precio, disponible } = producto;
+
+console.log(nombre, precio, disponible);
