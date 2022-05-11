@@ -1,5 +1,7 @@
-function saludar(nombre = "desconocido", apellido = "") {
-  console.log(`Hola: ${nombre} ${apellido}`);
+function saludar(nombre, apellido = "") {
+  nombre = nombre || "Desconocido"
+  console.log(`Hola ${nombre} ${apellido}`);
 }
 
-saludar('juan');
+saludar("Javier", "Gutierrez");
+saludar();
