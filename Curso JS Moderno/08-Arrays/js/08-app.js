@@ -12,12 +12,10 @@ const { nombre } = producto;
 
 console.log(nombre);
 
-
 //Destructuring con arreglos
+const numeros = [10, 20, 30, 40, 50];
 
-const numeros = [10,20,30,40,50];
+const [primero, segundo, ...tercero] = numeros;
 
-const [primero,segundo,...tercero] = numeros;
+console.log(primero, segundo);
 console.log(tercero);
-
-
