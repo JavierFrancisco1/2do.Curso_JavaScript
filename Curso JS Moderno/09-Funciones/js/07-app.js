@@ -1,16 +1,15 @@
 iniciarApp();
 function iniciarApp() {
-  console.log("iniciando app...");
-  segundaFuncion()
+  console.log("Iniciando app");
+  segundaFuncion();
 }
 
 function segundaFuncion() {
-  console.log("Desde la segunda funcion");
-  usuarioAutenticado('pablo')
+  console.log("Desde la segunda Función");
+  usuarioAutenticado("Javier");
 }
 
-function usuarioAutenticado(usuario){
-    console.log('Autenticando usuario....Espere...');
-    console.log(`Usuario autenticado Exitosamente: ${usuario}`);
+function usuarioAutenticado(usuario) {
+  console.log("Autenticando usuario... espere...");
+  console.log(`usuario autenticado exitosamente: ${usuario} `);
 }
-
