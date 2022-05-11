@@ -1,10 +1,10 @@
-const aprendiendo = function (tecnologia,tecnologia2) {
-  console.log(`aprendiendo ${tecnologia} y ${tecnologia2}`);
+const aprendiendo = function (tecnología, tecnología2) {
+  console.log(`Aprendiendo ${tecnología} y ${tecnología2}`);
 };
 
-aprendiendo("JavaScript",'Node.js');
+aprendiendo("JavaScript", "Node.Js");
 
+const aprendiendo2 = (tecnología, tecnología2) =>
+  `Aprendiendo ${tecnología} y ${tecnología2}`;
 
-
-const aprendiendo2 = (tecnologia,tecnologia2) => `aprendiendo ${tecnologia} y ${tecnologia2}`;
-console.log(aprendiendo2('JavaScript','Node.js'));
+console.log(aprendiendo2("javaScript", "Node.js"));
