@@ -1,6 +1,4 @@
-// alert("Hubo un error");
+// alert("hubo un error");
+// prompt("Cual es tu edad?");
 
-// prompt("cual es tu edad?");
-
-
-console.log(parseInt('20'));
+console.log(parseInt("20"));
