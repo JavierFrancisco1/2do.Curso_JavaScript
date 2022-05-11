@@ -2,30 +2,26 @@ const reproductor = {
   reproducir: function (id) {
     console.log(`Reproduciendo cancion con el id ${id}`);
   },
-  pausar() {
+
+  pausar: function () {
     console.log("Pausando...");
   },
   borrar: function (id) {
-    console.log(`Borrando cancion.. ${id}`);
+    console.log(`Borrando canción... ${id}`);
   },
-  agregarUnaPlayList: function (nombre) {
-    console.log(`Agregando una nueva playList: ${nombre}`);
-  },
-  borrarUnaPlayList: function (nombre) {
-    console.log(`Borrando una Play List de su biblioteca: ${nombre}`);
+  crearPlaylist: function (nombre) {
+    console.log(`Creando la Playlist de ${nombre}`);
   },
   reproducirPlayList: function (nombre) {
-    console.log(`reproduciendo: ${nombre}`);
+    console.log(`reproduciendo la Playlist ${nombre}`);
   },
 };
-
-reproductor.agregarUnaPlayList("heavy metal");
-reproductor.borrarUnaPlayList("Rock mexicano");
-
-reproductor.reproducirPlayList("heavy Metal");
 
 reproductor.reproducir(30);
 reproductor.reproducir(20);
 reproductor.pausar();
-
 reproductor.borrar(30);
+
+reproductor.crearPlaylist("heavy Metal");
+reproductor.crearPlaylist("Rock 90s");
+reproductor.reproducirPlayList("Heavy Metal");
