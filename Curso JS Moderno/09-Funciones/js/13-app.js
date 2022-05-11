@@ -1,30 +1,28 @@
 const reproductor = {
   cancion: "",
-  reproducir: (id) => console.log(`Reproduciendo cancion con el id ${id}`),
+  reproducir: (id) => console.log(`Reproduciendo canción con el id ${id}`),
   pausar: () => console.log("Pausando..."),
-  borrar: (id) => console.log(`Borrando cancion.. ${id}`),
-  crearPlayList: (nombre) =>
-    console.log(`Agregando una nueva playList: ${nombre}`),
-  reproducirPlayList: (nombre) => console.log(`reproduciendo: ${nombre}`),
-
+  borrar: (id) => console.log(`Borrando canción... ${id}`),
+  crearPlaylist: (nombre) => console.log(`Creando la Playlist de ${nombre}`),
+  reproducirPlayList: (nombre) =>
+    console.log(`reproduciendo la Playlist ${nombre}`),
   set nuevaCancion(cancion) {
     this.cancion = cancion;
-    console.log(`añadiendo: ${cancion}`);
+    console.log(`Añadiendo ${cancion}`);
   },
-
   get obtenerCancion() {
     console.log(`${this.cancion}`);
   },
 };
 
-reproductor.nuevaCancion = "enter sadman";
-reproductor.obtenerCancion;
+reproductor.nuevaCancion = 'Enter Sandman';
+reproductor.obtenerCancion
 
 reproductor.reproducir(30);
 reproductor.reproducir(20);
 reproductor.pausar();
 reproductor.borrar(30);
-reproductor.crearPlayList("heavy metal");
-reproductor.crearPlayList("Rock 90s");
-reproductor.reproducirPlayList("heavy Metal");
 
+reproductor.crearPlaylist("heavy Metal");
+reproductor.crearPlaylist("Rock 90s");
+reproductor.reproducirPlayList("Heavy Metal");
