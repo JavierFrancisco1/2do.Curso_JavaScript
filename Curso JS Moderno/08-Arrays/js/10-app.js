@@ -7,16 +7,14 @@ const carrito = [
   { nombre: "Celular", precio: 700 },
 ];
 
-for (let i = 0; i < carrito.length; i++) {
-  console.log(`${carrito[i].nombre} - Precio: ${carrito[i].precio}`);
-}
 
-const nuevoArreglo = carrito.forEach(function (producto) {
-  return`${producto.nombre} - Precio: ${producto.precio}`;
+const nuevoArreglo = carrito.map((producto) => {
+  return`${producto.nombre} - precio: ${producto.precio}`;
 });
 
-const nuevoArreglo2 = carrito.map(function (producto) {
-  return `${producto.nombre} - Precio: ${producto.precio}`;
+
+const nuevoArreglo2 = carrito.forEach((producto) => {
+  return`${producto.nombre} - precio: ${producto.precio}`;
 });
 
 console.log(nuevoArreglo);
