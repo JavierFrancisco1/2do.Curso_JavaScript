@@ -29,5 +29,5 @@ const existe = carrito.some((producto) => {
 console.log(existe);
 
 // En un arreglo tradicional con .some
-const existe2 = meses.some( mes => mes === 'Febrero')
+const existe2 = meses.some((mes) => mes === "Febrero");
 console.log(existe2);

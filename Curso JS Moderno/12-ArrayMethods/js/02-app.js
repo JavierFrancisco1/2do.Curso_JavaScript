@@ -9,18 +9,20 @@ const carrito = [
   { nombre: "Celular", precio: 700 },
 ];
 
-meses.forEach((mes, i) => {
+meses.forEach((mes, indice) => {
   if (mes === "Diciembre") {
-    console.log(`Encotrado en el indice ${i}`);
+    console.log(`el mes de ${mes} esta en el indice: ${indice + 1}`);
   }
 });
 
-//Encotrar el indice de Abril
+// Encontrar el indice de abril
 
-const indice = meses.findIndex((mes) => mes === "Abril");
+const indice = meses.findIndex((mes) => mes === "Diciembre");
+
 console.log(indice);
 
-// Encontar un indice de un arreglo de objetos
+// Encontrar un indice de un arreglo de objetos..
 
 const indice2 = carrito.findIndex((producto) => producto.precio === 100);
+
 console.log(indice2);
