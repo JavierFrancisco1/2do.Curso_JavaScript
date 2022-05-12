@@ -7,21 +7,17 @@ const carrito = [
   { nombre: "Celular", precio: 700 },
 ];
 
-// con un forEach
-let resultado = " ";
-carrito.forEach((producto, index) => {
+// Con un forEach
+
+let resultado = "";
+carrito.forEach((producto, indice) => {
   if (producto.nombre === "Tablet") {
-    resultado = carrito[index];
+    resultado = carrito[indice];
   }
 });
-
 console.log(resultado);
 
-// con un .find
+//Con un .find
 
 const resultado2 = carrito.find((producto) => producto.precio === 100);
 console.log(resultado2);
-
-let resultado3 = carrito.filter((producto) => producto.precio === 100);
-
-console.log(resultado3);
