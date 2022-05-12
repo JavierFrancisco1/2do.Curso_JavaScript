@@ -1,12 +1,8 @@
-let i = 0;
+let i = 100; // inicializar el while
 
-while(i <= 20){
-    if(i %2 == 0){
-        console.log(`${i}: numero par`);
-    }
-    else{
-        console.log(`${i} numero impar`);
-    }
+while (i <= 10) {
+  // condición
+  console.log(`Numero ${i}`);
 
-    i++;
+  i++; // incremento
 }
