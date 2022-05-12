@@ -7,18 +7,12 @@ const carrito = [
   { nombre: "Celular", precio: 700 },
 ];
 
-// Con un forEach
-
 let total = 0;
 
 carrito.forEach((producto) => (total += producto.precio));
-
 console.log(total);
 
-//con un Reduce
+// Con un reduce
 
-let resultado = carrito.reduce(
-  (total, producto) => total + producto.precio,
-  0
-);
+let resultado = carrito.reduce((total, producto) => total + producto.precio, 0);
 console.log(resultado);
