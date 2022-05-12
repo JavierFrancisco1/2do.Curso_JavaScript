@@ -4,7 +4,7 @@ const dinero = 300;
 const totalAPagar = 300;
 
 if (dinero >= totalAPagar) {
-  console.log("Si podemos pagar");
+  console.log(`Si podemos pagar`);
 } else {
-  console.log("fondos insuficientes");
+  console.log("Fondos insuficientes");
 }

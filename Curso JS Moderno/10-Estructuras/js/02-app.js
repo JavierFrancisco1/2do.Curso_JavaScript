@@ -4,16 +4,12 @@ const puntaje2 = "1000";
 console.log(typeof puntaje);
 console.log(typeof puntaje2);
 
-// if (puntaje != 1000) { // != difererente == Igual a
-//   console.log("Si es diferente");
+// if (puntaje != 1000) {
+//   console.log(`si! es diferente....`);
 // }
 
 if (puntaje !== "1000") {
-  // != difererente == Igual a
-  console.log("Si es diferente");
+  console.log(`si! es diferente....`);
 } else {
   console.log("No es diferente");
 }
-
-//== Operador que no es estricto y no compara tipos
-// === Operador estricto

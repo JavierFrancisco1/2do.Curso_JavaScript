@@ -1,15 +1,15 @@
 const usuario = false;
 const puedePagar = false;
 
-if(usuario && puedePagar){
-    console.log('si eres usuario y puedes pagar');
+if (usuario && puedePagar) {
+  console.log("Si puedes comprar");
 }
-else if(!usuario && !puedePagar){
-    console.log('No puedes comprar');
+else if(!puedePagar && !usuario){
+  console.log('No no puedes comprar');
 }
 else if(!usuario){
-    console.log('inicia sesion para continuar o haz una cuenta');
+  console.log('Inicia sesión o saca una cuenta');
 }
 else if(!puedePagar){
-console.log('No cuenta con los fondos suficientes');
+  console.log('Fondos insuficientes');
 }

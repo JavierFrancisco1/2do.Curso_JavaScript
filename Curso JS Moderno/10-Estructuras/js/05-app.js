@@ -1,4 +1,4 @@
-// switch case
+//switch case
 
 const metodoPago = "efectivo";
 
@@ -7,17 +7,19 @@ switch (metodoPago) {
     pagar();
     break;
   case "cheque":
-    console.log(`pagaste con: ${metodoPago}`);
+    console.log(`Pagaste con ${metodoPago}`);
     break;
   case "tarjeta":
-    console.log(`pagaste con: ${metodoPago}`);
+    console.log(`Pagaste con ${metodoPago}`);
     break;
+
   default:
     console.log(
-      "Aun no has seleccionado un metodo de pago o metodo de pago no soportado"
+      "Aun no haz seleccionado un método de pago o método de pago no soportado "
     );
     break;
 }
+
 function pagar() {
-  console.log("pagando...");
+  console.log(`pagando....`);
 }

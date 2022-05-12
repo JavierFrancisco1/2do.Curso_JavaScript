@@ -7,11 +7,10 @@ const cheque = false;
 
 if (dinero >= totalAPagar) {
   console.log("Si podemos pagar");
-}else if( cheque ){
-    console.log('si tengo un cheque');
-}else if( tarjeta){
-    console.log('si puedo pagar por tengo la tarjeta');
-} 
-else {
-  console.log("fondos insuficientes");
+} else if (cheque) {
+  console.log("Si tengo un cheque");
+} else if (tarjeta) {
+  console.log(`Si puedo pagar por que tengo la tarjeta`);
+} else {
+  console.log("Fondos insuficientes");
 }
