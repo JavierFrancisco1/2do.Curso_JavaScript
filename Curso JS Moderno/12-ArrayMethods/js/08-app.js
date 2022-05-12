@@ -10,11 +10,10 @@ const carrito = [
 ];
 
 //Spred operator con el arreglo de indices
-const meses2 = ["Agosto", ...meses];
+const meses2 = [...meses, "Agosto"];
 console.log(meses2);
 
-const producto = { nombre: "disco Duro", precio: 300 };
+const producto = { nombre: "Disco duro", precio: 300 };
 
 const carrito2 = [...carrito, producto];
-
 console.log(carrito2);
