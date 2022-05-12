@@ -4,18 +4,17 @@ if (autenticado) {
   console.log("El usuario esta autenticado");
 }
 
-const puntaje = 350;
+const puntaje = 450;
 
 function revisarPuntaje() {
   if (puntaje > 400) {
-    console.log("Excelente!!");
-    return;
+    return console.log("Excelente!!");
   }
 
   if (puntaje > 300) {
-    console.log("'Buen puntaje..felicidades'");
-    return;
+    return console.log("Buen puntaje...felicidades");
   }
 }
+
 
 revisarPuntaje();
