@@ -1,2 +1,6 @@
-const formulario = document.getElementById("formulario");
+const d = document;
+
+const formulario = d.getElementById("formulario");
 console.log(formulario);
+
+
