@@ -1,19 +1,17 @@
 const nav = document.querySelector(".navegacion");
 
 // registrar un evento
-
-nav.addEventListener("mouseenter", () => {
-  console.log("entrando en la navegacion");
+nav.addEventListener("mouseout", (e) => {
+  console.log("saliendo de la navegación");
 
   nav.style.backgroundColor = "transparent";
 });
-
-nav.addEventListener("dblclick", () => {
-  console.log("saliendo de la navegacion");
+nav.addEventListener("dblclick", (e) => {
+  console.log("entrando en la navegación");
   nav.style.backgroundColor = "white";
 });
 
-//mousedown -- cimiliar al click
+// mousedown - similar al click
 // click
-//dblclick - Doble click
-//mouseup - cunado sueltas el mouse
+//dblclick = cuando das doble click
+// mouseup - cuando sueltas el mouse
