@@ -11,7 +11,7 @@ function mostrarOcultarFooter() {
   } else {
     footer.classList.add("activo");
     this.classList.add("activo");
-    this.textContent = "x Cerrar";
+    this.textContent = "X Cerrar";
   }
 
   console.log(footer.classList);
