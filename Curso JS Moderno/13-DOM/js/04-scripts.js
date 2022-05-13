@@ -1,23 +1,22 @@
-const card = document.querySelector(".card");
+const d = document;
+
+const card = d.querySelector(".card");
 console.log(card);
 
-//Podemos tener selectores especificos como en Css
+// podemos tener selectores especificos como en css
 
-const info = document.querySelector(".premium .info");
+const info = d.querySelector(".premium .info");
 console.log(info);
 
-//Seleccionar el segundo card de hospedaje
-const segundoCard = document.querySelector(
-  "section.hospedaje .card:nth-child(2)"
-);
+//seleccionar el segundo card de hospedaje
+const segundoCard = d.querySelector(".hospedaje .card:nth-child(2)");
 console.log(segundoCard);
 
-//seleccionar el formulario
-
-const formulario = document.querySelector("#formulario");
+// seleccionar el formulario
+const formulario = d.querySelector("#formulario");
 console.log(formulario);
 
-//Seleccionar elementos html
+// Seleccionar Elementos HTML
 
-const navegacion = document.querySelector("nav");
-console.log(navegacion);
+const nav = document.querySelector("nav");
+console.log(nav);
