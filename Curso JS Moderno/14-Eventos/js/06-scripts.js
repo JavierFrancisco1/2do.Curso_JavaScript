@@ -8,12 +8,10 @@ cardDiv.addEventListener("click", (e) => {
   e.stopPropagation();
   console.log("click en card");
 });
-
 infoDiv.addEventListener("click", (e) => {
   e.stopPropagation();
   console.log("click en info");
 });
-
 titulo.addEventListener("click", (e) => {
   e.stopPropagation();
   console.log("click en titulo");
