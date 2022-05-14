@@ -1,9 +1,12 @@
-window.addEventListener("scroll", () => {
+window.addEventListener("scroll", (e) => {
   const premium = document.querySelector(".premium");
   const ubicacion = premium.getBoundingClientRect();
-  if (ubicacion.top < 784) {
-    console.log("El elemento esta visible");
+
+  console.log(ubicacion);
+
+  if (ubicacion.top < 602) {
+    console.log("El elemento ya esta visible");
   } else {
-    console.log("aun no, da mas scroll");
+    console.log("Aun no da mas scroll");
   }
 });
