@@ -1,116 +1,139 @@
-// variables
-const email = document.querySelector('#email');
-const asunto = document.querySelector('#asunto');
-const mensaje = document.querySelector('#mensaje');
+//Variables
+const btnEnviar = document.querySelector("#enviar");
+const btnReset = document.querySelector("#resetBtn");
+const form = document.querySelector("#enviar-mail");
 
-const btnEnviar = document.querySelector('#enviar');
-const formularioEnviar = document.querySelector('#enviar-mail');
-const resetBtn = document.querySelector('#resetBtn');
+//Variables de los campos
+const Email = document.querySelector("#email");
+const Asunto = document.querySelector("#asunto");
+const Mensaje = document.querySelector("#mensaje");
 
-// event Listener
+const exp =
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-eventListeners();
+//eventos
+EventListener();
+function EventListener() {
+  //cargando la App y el DOM
+  document.addEventListener("DOMContentLoaded", iniciarApp);
 
-function eventListeners() {
-     // Inicio de la aplicación y deshabilitar submit
-     document.addEventListener('DOMContentLoaded', inicioApp);
+  //eventos de los input
+  Email.addEventListener("blur", validarFormulario);
+  Asunto.addEventListener("blur", validarFormulario);
+  Mensaje.addEventListener("blur", validarFormulario);
 
-     // Campos del formulario
-     email.addEventListener('blur', validarFormulario);
-     asunto.addEventListener('blur', validarFormulario);
-     mensaje.addEventListener('blur', validarFormulario);
+  btnReset.addEventListener("click", resetear);
 
-     // Boton de enviar en el submit
-     formularioEnviar.addEventListener('submit', enviarEmail);
-
-     // Boton de reset
-     resetBtn.addEventListener('click', resetFormulario);
+  form.addEventListener("submit", enviarEmail);
 }
 
+//funciones
 
-
-// funciones
-function inicioApp() {
-     // deshabilitar el envio
-     btnEnviar.disabled = true;
-     btnEnviar.classList.add('cursor-not-allowed', 'opacity-50')
+function iniciarApp() {
+  btnEnviar.disabled = true;
 }
-
-
-// Valida que el campo tengo algo escrito
 
 function validarFormulario(e) {
-    
-     if(e.target.value.length > 0 ) {
-          campo.style.borderBottomColor = 'green';
-          campo.classList.remove('error');
-     } else {
-          e.target.classList.add('border', 'border-red-500');
-     }
+  e.preventDefault();
 
+  if (e.target.value.length > 0) {
+    //eliminamos los errores
 
+    e.target.classList.remove("border", "border-red-500");
+    e.target.classList.add("border", "border-green-500");
 
-     // Validar unicamente el email
-     if(this.type === 'email') {
-          validarEmail(this);
-     }
+    const errores = document.querySelector("p.error");
 
+    if (errores) {
+      errores.remove();
+    }
+  } else {
+    e.target.classList.remove("border", "border-green-500");
+    e.target.classList.add("border", "border-red-500");
+    mostrarError("Todos los campos son obligatorios");
+  }
 
-     if(email.value !== '' && asunto.value !== '' && mensaje.value !== '' ) {
-        btnEnviar.disabled = false;
-        btnEnviar.classList.remove('opacity-50');
-        btnEnviar.classList.remove('cursor-not-allowed');
-     }
+  if (e.target.type === "email") {
+    if (exp.test(e.target.value)) {
+      e.target.classList.remove("border", "border-red-500");
+      e.target.classList.add("border", "border-green-500");
+
+      const errores = document.querySelector("p.error");
+
+      if (errores) {
+        errores.remove();
+      }
+    } else {
+      e.target.classList.remove("border", "border-green-500");
+      e.target.classList.add("border", "border-red-500");
+
+      mostrarError("El email no es valido");
+    }
+  }
+
+  if (exp.test(Email.value) && Asunto.value !== "" && Mensaje.value !== "") {
+    btnEnviar.disabled = false;
+    btnEnviar.classList.remove("cursor-not-allowed", "opacity-50");
+  }
 }
 
-// Resetear el formulario 
-function resetFormulario(e) {
-     formularioEnviar.reset();
-     e.preventDefault();
+//vamos a mostrar los errores en validacion
+
+function mostrarError(mensajito) {
+  const mensajeError = document.createElement("p");
+  mensajeError.textContent = mensajito;
+  mensajeError.classList.add(
+    "border",
+    "border-red-500",
+    "background-red-100",
+    "text-red-500",
+    "p-3",
+    "mt-5",
+    "text-center",
+    "error"
+  );
+
+  const variosMensajesError = document.querySelectorAll(".error");
+
+  if (variosMensajesError.length === 0) {
+    form.appendChild(mensajeError);
+  }
 }
 
-// Cuando se envia el correo
 function enviarEmail(e) {
+  e.preventDefault();
 
-    e.preventDefault();
+  const spinner = document.querySelector("#spinner");
+  spinner.style.display = "flex";
 
+  setTimeout(() => {
+    spinner.style.display = "none";
 
-     // Spinner al presionar Enviar
-     const spinner = document.querySelector('#spinner');
-     spinner.style.display = 'flex';
+    const parrafo = document.createElement("p");
+    parrafo.textContent = "el mensaje se envió correctamente";
+    parrafo.classList.add(
+      "my-10",
+      "text-center",
+      "bg-green-500",
+      "p-2",
+      "text-white",
+      "font-bold",
+      "uppercase"
+    );
 
-     // Gif que envia email
-     const enviado = document.createElement('p');
-     enviado.textContent = 'Mensaje Enviado Correctamente';
-     enviado.classList.add('bg')
+    form.insertBefore(parrafo, spinner);
 
-     // Ocultar Spinner y mostrar gif de enviado
-     setTimeout( () => {
-          spinner.style.display = 'none';
+    setTimeout(() => {
+      parrafo.remove();
 
-          document.querySelector('#loaders').appendChild( enviado );
-
-          setTimeout(() =>  {
-               enviado.remove();
-               formularioEnviar.reset();
-          }, 5000);
-     }, 3000);
-
-     
+      resetear();
+    }, 5000);
+  }, 3000);
 }
 
-
-
-function validarEmail(campo) {
-     const mensaje = campo.value;
-
-     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-     
-     if( re.test(mensaje.toLowerCase()) ) {
-          campo.style.borderBottomColor = 'green';
-          campo.classList.remove('error');
-     } else {
-          campo.style.borderBottomColor = 'red';
-          campo.classList.add('error');
-     }
+function resetear(e) {
+  form.reset();
+  Email.classList.remove("border-green-500", "border-red-500");
+  Asunto.classList.remove("border-green-500", "border-red-500");
+  Mensaje.classList.remove("border-green-500", "border-red-500");
 }

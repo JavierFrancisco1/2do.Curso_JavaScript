@@ -1,4 +1,4 @@
-// variables
+a// variables
 const email = document.querySelector('#email');
 const asunto = document.querySelector('#asunto');
 const mensaje = document.querySelector('#mensaje');
