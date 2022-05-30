@@ -22,3 +22,7 @@ export class Cliente {
     return `Cliente: ${this.nombre} - ahorro ${this.ahorro}`;
   }
 }
+
+export default function nuevaFuncion(){
+    console.log('Este es el export default');
+}

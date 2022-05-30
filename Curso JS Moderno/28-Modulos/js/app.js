@@ -1,4 +1,4 @@
-import {
+import nuevaFuncion, {
   nombreCliente,
   ahorro,
   mostrarInformacion,
@@ -7,6 +7,9 @@ import {
 } from "./cliente.js";
 
 import {Empresa} from './empresa.js'
+
+
+nuevaFuncion();
 
 console.log(nombreCliente);
 console.log(ahorro);
@@ -22,3 +25,4 @@ console.log(cliente.mostrarInformacion());
 // Importar empresa
 const empresa = new Empresa('código con juan',100,'Aprendizaje en Linea');
 console.log(empresa.mostrarInformacion());
+
