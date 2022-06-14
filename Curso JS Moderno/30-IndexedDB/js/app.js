@@ -26,7 +26,7 @@ function crmDB() {
   // configuracion de la base de datos
   crmDB.onupgradeneeded = function (e) {
     const db = e.target.result;
-    console.log(db);
+    // console.log(db);
 
     const objectStore = db.createObjectStore("crm", {
       keyPath: "crm",
