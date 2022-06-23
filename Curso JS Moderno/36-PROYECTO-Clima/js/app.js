@@ -20,7 +20,6 @@ function buscarClima(e) {
     mostrarError("Ambos campos son obligatorios");
 
     return;
-  } else {
   }
 
   // Consultaremos la API
