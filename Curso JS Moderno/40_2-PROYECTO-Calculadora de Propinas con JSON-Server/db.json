@@ -71,6 +71,12 @@
       "nombre": "Café Capuchino",
       "precio": 40,
       "categoria": 2
+    },
+    {
+      "id": 12,
+      "nombre": "Un platillo nuevo",
+      "precio": 40,
+      "categoria": 2
     }
   ],
   "cliente": []
