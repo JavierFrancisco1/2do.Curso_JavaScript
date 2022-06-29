@@ -145,8 +145,12 @@ function agregarPlatillo(producto) {
   //Limpiar el codigo HTML previo
   limpiarHTMl();
 
-  // Mostrar el Resumen
-  actualizarResumen();
+  if (cliente.pedido.length) {
+    // Mostrar el Resumen
+    actualizarResumen();
+  } else {
+    mensajePedidoVacio();
+  }
 }
 
 function actualizarResumen() {
@@ -154,7 +158,7 @@ function actualizarResumen() {
 
   // Informacion de la mesa
   const resumen = document.createElement("div");
-  resumen.classList.add("col-md-6",'card','py-5','px-3','shadow');
+  resumen.classList.add("col-md-6", "card", "py-5", "px-3", "shadow");
 
   const mesa = document.createElement("p");
   mesa.textContent = "Mesa: ";
@@ -178,19 +182,86 @@ function actualizarResumen() {
   hora.appendChild(horaSpan);
 
   // Titulo de la sección
-  const heading = document.createElement('h3');
-  heading.textContent = 'Platillos consumidos';
-  heading.classList.add('my-4','text-center')
+  const heading = document.createElement("h3");
+  heading.textContent = "Platillos consumidos";
+  heading.classList.add("my-4", "text-center");
 
+  // Iterar sobre el array de pedidos
+  const grupo = document.createElement("ul");
+  grupo.classList.add("list-group");
+
+  const { pedido } = cliente;
+  pedido.forEach((articulo) => {
+    const { nombre, cantidad, precio, id } = articulo;
+
+    const lista = document.createElement("li");
+    lista.classList.add("list-group-item");
+
+    const nombreEl = document.createElement("h4");
+    nombreEl.classList.add("my-4");
+    nombreEl.textContent = nombre;
+
+    // Cantidad del articulo
+    const cantidadEl = document.createElement("p");
+    cantidadEl.classList.add("fw-bold");
+    cantidadEl.textContent = "cantidad: ";
+
+    const cantidadValor = document.createElement("span");
+    cantidadValor.classList.add("fw-normal");
+    cantidadValor.textContent = cantidad;
+
+    // precio del articulo
+    const precioEl = document.createElement("p");
+    precioEl.classList.add("fw-bold");
+    precioEl.textContent = "Precio: ";
+
+    const precioValor = document.createElement("span");
+    precioValor.classList.add("fw-normal");
+    precioValor.textContent = `$${precio}`;
+
+    // Subtotal del articulo
+    // precio del articulo
+    const subtotalEl = document.createElement("p");
+    subtotalEl.classList.add("fw-bold");
+    subtotalEl.textContent = "Subtotal: ";
+
+    const subtotalValor = document.createElement("span");
+    subtotalValor.classList.add("fw-normal");
+    subtotalValor.textContent = calcularSubtotal(precio, cantidad);
+
+    // agregar un boton de eliminar horden
+    const btnEliminar = document.createElement("button");
+    btnEliminar.classList.add("btn", "btn-danger");
+    btnEliminar.textContent = "Eliminar del pedido";
+
+    // función para eliminar del pedido
+    btnEliminar.onclick = function () {
+      eliminarProducto(id);
+    };
+
+    // Agregar valores a sus contenedores
+    cantidadEl.appendChild(cantidadValor);
+    precioEl.appendChild(precioValor);
+    subtotalEl.appendChild(subtotalValor);
+
+    // agregar elementos al li
+    lista.appendChild(nombreEl);
+    lista.appendChild(cantidadEl);
+    lista.appendChild(precioEl);
+    lista.appendChild(subtotalEl);
+    lista.appendChild(btnEliminar);
+
+    // agregar lista al grupo principal
+    grupo.appendChild(lista);
+  });
 
   // agregar al contenido
   resumen.appendChild(mesa);
   resumen.appendChild(hora);
   resumen.appendChild(heading);
+  resumen.appendChild(grupo);
 
-  contenido.appendChild(resumen)
-
-
+  contenido.appendChild(resumen);
 }
 
 function limpiarHTMl() {
@@ -199,4 +270,39 @@ function limpiarHTMl() {
   while (contenido.firstChild) {
     contenido.removeChild(contenido.firstChild);
   }
+}
+
+function calcularSubtotal(precio, cantidad) {
+  return `$ ${precio * cantidad}`;
+}
+
+function eliminarProducto(id) {
+  const { pedido } = cliente;
+  const resultado = pedido.filter((articulo) => articulo.id !== id);
+  cliente.pedido = [...resultado];
+
+  //Limpiar el codigo HTML previo
+  limpiarHTMl();
+
+  if (cliente.pedido.length) {
+    // Mostrar el Resumen
+    actualizarResumen();
+  } else {
+    mensajePedidoVacio();
+  }
+  // El producto se elimino por lo tanto regresamos la cantidad a 0 en el formulario
+  const productoEliminado = `#producto-${id}`;
+  const inputEliminado = document.querySelector(productoEliminado);
+  inputEliminado.value = 0;
+  console.log(productoEliminado);
+}
+
+function mensajePedidoVacio() {
+  const contenido = document.querySelector("#resumen .contenido");
+
+  const texto = document.createElement("p");
+  texto.classList.add("text-center");
+  texto.textContent = "Añade los elementos del pedido";
+
+  contenido.appendChild(texto);
 }
