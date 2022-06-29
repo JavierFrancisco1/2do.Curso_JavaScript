@@ -61,7 +61,7 @@ function mostrarSecciones() {
 }
 
 function obtenerPlatillos() {
-  const url = "http://localhost:4000/platillos";
+  const url = "http://localhost:3000/platillos";
 
   fetch(url)
     .then((respuesta) => respuesta.json())
@@ -120,12 +120,11 @@ function agregarPlatillo(producto) {
 
   // Revisar que la cantidad sea mayor a 0
   if (producto.cantidad > 0) {
-
     // Comprueba si el elemento ya existe en el array
-    if(pedido.some(articulo => articulo.id === producto.id)){
+    if (pedido.some((articulo) => articulo.id === producto.id)) {
       // El articulo ya existe, actualizar la cantidad
-      const pedidoActualizado = pedido.map(articulo => {
-        if(articulo.id === producto.id){
+      const pedidoActualizado = pedido.map((articulo) => {
+        if (articulo.id === producto.id) {
           articulo.cantidad = producto.cantidad;
         }
         return articulo;
@@ -133,19 +132,71 @@ function agregarPlatillo(producto) {
 
       //Se asigna el nuevo Array a cliente.pedido
       cliente.pedido = [...pedidoActualizado];
-    }else{
+    } else {
       // El articulo no existe lo agregamos al array de pedido
-      cliente.pedido = [...pedido,producto];
-
+      cliente.pedido = [...pedido, producto];
     }
-
-    
   } else {
     // Eliminar elementos cuando la cantidad es 0
-    const resultado = pedido.filter(articulo => articulo.id !== producto.id);
+    const resultado = pedido.filter((articulo) => articulo.id !== producto.id);
     cliente.pedido = [...resultado];
-    
   }
 
-  
+  //Limpiar el codigo HTML previo
+  limpiarHTMl();
+
+  // Mostrar el Resumen
+  actualizarResumen();
+}
+
+function actualizarResumen() {
+  const contenido = document.querySelector("#resumen .contenido");
+
+  // Informacion de la mesa
+  const resumen = document.createElement("div");
+  resumen.classList.add("col-md-6",'card','py-5','px-3','shadow');
+
+  const mesa = document.createElement("p");
+  mesa.textContent = "Mesa: ";
+  mesa.classList.add("fw-bold");
+
+  const mesaSpan = document.createElement("span");
+  mesaSpan.textContent = cliente.mesa;
+  mesaSpan.classList.add("fw-normal");
+
+  // Informacion de la hora
+  const hora = document.createElement("p");
+  hora.textContent = "Hora: ";
+  hora.classList.add("fw-bold");
+
+  const horaSpan = document.createElement("span");
+  horaSpan.textContent = cliente.hora;
+  horaSpan.classList.add("fw-normal");
+
+  // agregar a los elementos padre
+  mesa.appendChild(mesaSpan);
+  hora.appendChild(horaSpan);
+
+  // Titulo de la sección
+  const heading = document.createElement('h3');
+  heading.textContent = 'Platillos consumidos';
+  heading.classList.add('my-4','text-center')
+
+
+  // agregar al contenido
+  resumen.appendChild(mesa);
+  resumen.appendChild(hora);
+  resumen.appendChild(heading);
+
+  contenido.appendChild(resumen)
+
+
+}
+
+function limpiarHTMl() {
+  const contenido = document.querySelector("#resumen .contenido");
+
+  while (contenido.firstChild) {
+    contenido.removeChild(contenido.firstChild);
+  }
 }
