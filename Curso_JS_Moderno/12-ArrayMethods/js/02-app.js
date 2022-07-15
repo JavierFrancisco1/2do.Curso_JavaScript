@@ -26,3 +26,14 @@ console.log(indice);
 const indice2 = carrito.findIndex((producto) => producto.precio === 100);
 
 console.log(indice2);
+
+
+/* y a c h t
+w a g o n
+unicycle
+reki
+quail
+packli
+
+
+*/

@@ -1,6 +1,6 @@
 const btnFlotante = document.querySelector(".btn-flotante");
 const footer = document.querySelector(".footer");
-
+console.log(btnFlotante,footer);
 btnFlotante.addEventListener("click", mostrarOcultarFooter);
 
 function mostrarOcultarFooter() {

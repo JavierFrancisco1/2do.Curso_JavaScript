@@ -35,5 +35,9 @@ console.table(carrito);
 // //Eliminar del inicio del arreglo
 // carrito.shift();
 // console.table(carrito);
+
+// el primer parámetro indica desde que posición queremos que empiece a eliminar.
+// el segundo parámetro debemos indicar cuantas propiedades deseamos eliminar después 
+// de la posición que le indicamos si le ponemos 1 pues solo elimina uno y asi sucesivamente
 carrito.splice(1,2)
 console.table(carrito);

@@ -31,6 +31,7 @@ function EventListener() {
 
 function iniciarApp() {
   btnEnviar.disabled = true;
+  btnEnviar.classList.add('cursor-not-allowed')
 }
 
 function validarFormulario(e) {

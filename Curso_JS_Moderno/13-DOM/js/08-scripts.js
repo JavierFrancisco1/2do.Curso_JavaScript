@@ -1,8 +1,8 @@
 const navegacion = document.querySelector(".navegacion");
 console.log(navegacion.firstElementChild);
 console.log(navegacion.lastElementChild);
-// console.log(navegacion.childNodes); // Los espacions en blanco son conciderados como elementos
-// console.log(navegacion.children); // Los espacions en blanco son conciderados como elementos
+// console.log(navegacion.childNodes); // Los espacios en blanco son considerados como elementos
+// console.log(navegacion.children); // Los espacios en blanco son considerados como elementos
 
 // console.log(navegacion.children[1].nodeName);
 // console.log(navegacion.children[1].nodeType);
@@ -20,4 +20,5 @@ const card = document.querySelector(".card");
 
 
 // const ultimoCard = document.querySelector('.card:nth-child(4)');
+// console.log(ultimoCard.nextElementSibling);
 // console.log(ultimoCard.previousElementSibling);

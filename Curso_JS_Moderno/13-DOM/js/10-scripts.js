@@ -18,6 +18,7 @@ enlace.classList.add("alguna-clase");
 const navegacion = document.querySelector(".navegacion");
 console.log(navegacion.children);
 
+// insertar el enlace antes(insertBefore) de la posicion numero 1 osea antes del enlace *ayuda* (navegacion.children[2])
 navegacion.insertBefore(enlace, navegacion.children[1]);
 
 // crear un CARD

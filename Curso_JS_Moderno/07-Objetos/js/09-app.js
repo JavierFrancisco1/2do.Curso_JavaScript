@@ -17,5 +17,5 @@ console.log(producto);
 console.log(Object.isSealed(producto));
 
 /* con el metodo (seal) no se puede eliminar ni agregar otra propiedad al objeto 
- solo se puede modificar el valor de las propiedades del objeto como el boolean ..como arriba le cambiamos
+ solo se puede modificar el valor de las propiedades existentes del objeto como el boolean ..como arriba le cambiamos
  de true a false */

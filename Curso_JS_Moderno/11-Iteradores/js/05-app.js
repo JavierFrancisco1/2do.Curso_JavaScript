@@ -1,6 +1,12 @@
-let i = 1000;
+let i = 1;
 
 do {
-  console.log(`numero: ${i}`);
+  if (i % 2 === 1) {
+    console.log(`numero impar ${i}`);
+  }
+  if (i % 2 === 0) {
+    console.log(`numero par ${i}`);
+  }
+
   i++; // Incremento
-} while (i < 10); // condicion
+} while (i < 100); // condicion

@@ -1,5 +1,29 @@
+// const producto = {
+//   nombre: "Monitor 20 pulgadas",
+//   precio: 300,
+//   disponible: true,
+//   mostrarInfo: function () {
+//     console.log(
+//       `El producto: ${this.nombre} Tiene un precio de ${this.precio}`
+//     );
+//   },
+// };
+// const producto2= {
+//   nombre: "Tablet",
+//   precio: 3000,
+//   disponible: true,
+//   mostrarInfo: function () {
+//     console.log(
+//       `El producto: ${this.nombre} Tiene un precio de ${this.precio}`
+//     );
+//   },
+// };
+
+// producto.mostrarInfo();
+// producto2.mostrarInfo();
+
 const producto = {
-  nombre: "Monitor 20 pulgadas",
+  nombre: "Monitor de 20 pulgadas",
   precio: 300,
   disponible: true,
   mostrarInfo: function () {
@@ -8,16 +32,5 @@ const producto = {
     );
   },
 };
-const producto2= {
-  nombre: "Tablet",
-  precio: 3000,
-  disponible: true,
-  mostrarInfo: function () {
-    console.log(
-      `El producto: ${this.nombre} Tiene un precio de ${this.precio}`
-    );
-  },
-};
 
-producto.mostrarInfo();
-producto2.mostrarInfo();
+producto.mostrarInfo()
